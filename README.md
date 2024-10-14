@@ -15,24 +15,16 @@ It prints hello world (for now)
 
 ### Setup
 
-1. Make sure you are using nightly Rust:
+Make sure you execute all commands inside the project directory. There is a `rust-toolchain.toml` file, so `cargo` will use the correct version of Rust.
 
-   ```sh
-   rustup install nightly
-   ```
-
-2. Install the `armv7em-none-eabihf` target:
-
-   ```sh
-   rustup target add armv7em-none-eabihf
-   ```
-
-3. Install the `probe-rs` CLI tool:
+1. Install the `probe-rs` CLI tool:
 
    ```sh
    cargo install cargo-binstall
    cargo binstall probe-rs-tools
    ```
+
+2. You're done
 
 ### Flashing/Running
 
