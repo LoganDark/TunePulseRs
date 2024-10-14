@@ -3,6 +3,8 @@
 #![no_std]
 #![no_main]
 
+use core::hint::black_box;
+
 use defmt::*;
 use {defmt_rtt as _, panic_probe as _};
 
@@ -13,4 +15,5 @@ async fn main(_spawner: Spawner) {
 	let device_config = embassy_stm32::Config::default();
 	let _context = embassy_stm32::init(device_config);
 	info!("Hello, world!");
+	loop { black_box(()); } // keep the chip from entering sleep mode
 }
