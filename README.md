@@ -17,14 +17,31 @@ It prints hello world (for now)
 
 Make sure you execute all commands inside the project directory. There is a `rust-toolchain.toml` file, so `cargo` will use the correct version of Rust.
 
-1. Install the `probe-rs` CLI tool:
+#### Software
+
+1. Make sure you have [`rustup`](https://rustup.rs) installed.
+
+2. Make sure you have the [ST-Link drivers](https://www.st.com/en/development-tools/stm32cubeprog.html) installed.
+   (Run the installer until it installs the drivers, then just close it. You don't need the programmer, only the drivers.)
+
+3. Install the `probe-rs` CLI tool:
 
    ```sh
    cargo install cargo-binstall
    cargo binstall probe-rs-tools
    ```
 
-2. You're done
+#### Hardware
+
+Solder the RST pin on the ST-Link board to the RST pin on the CLN17 board. This is the only pin that needs to be soldered; the rest go over USB as normal.
+
+![Where to solder wire to CLN17](doc/photo/CLN17_SWD_RST_1.png)
+
+![How to route wire through casing](doc/photo/CLN17_SWD_RST_2.png)
+
+![Where to solder wire to ST-Link](doc/photo/CLN17_SWD_RST_3.png)
+
+![Through-hole solder joint on ST-Link](doc/photo/CLN17_SWD_RST_4.png)
 
 ### Flashing/Running
 
@@ -40,12 +57,8 @@ cargo run
 
 Serial output will automatically be streamed to the terminal.
 
-**Make sure the code always contains an infinite loop somewhere, otherwise you will have to press the reset button on the board in order to flash it again.**
-
-You have to hold down reset until executing `cargo run`. If you try to hold reset during flashing, it won't work.
-
 ### Debugging
 
-1. Solder the RST pin on the ST-Link board to the RST pin on the CLN17 board. This is the only pin that needs to be soldered, the rest go over USB
-2. Use the VSCode run configuration to flash and run the code
-3. The code won't start automatically, so make sure to unpause the debugger
+Use the VSCode run configuration to flash and run the code.
+
+The code won't start automatically, so make sure to unpause the debugger once you want it to execute.

@@ -1,7 +1,7 @@
 rustflags = ['-Ctarget-cpu=cortex-m4']
 
 [target.thumbv7em-none-eabihf]
-runner = 'probe-rs run --chip STM32G431CBUx'
+runner = 'probe-rs run --chip STM32G431CBUx --connect-under-reset'
 
 [build]
 target = 'thumbv7em-none-eabihf'
