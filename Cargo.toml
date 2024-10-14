@@ -1,0 +1,17 @@
+[workspace]
+members = ['crates/*']
+resolver = '2'
+
+[workspace.dependencies]
+embassy-stm32 = { version = '0.1.0', path = 'lib/embassy/embassy-stm32', features = ['defmt', 'stm32g431cb', 'unstable-pac', 'memory-x', 'time-driver-any', 'exti'] }
+embassy-time = { version = '0.3.2', path = 'lib/embassy/embassy-time', features = ['defmt'] }
+embassy-executor = { version = '0.6.0', path = 'lib/embassy/embassy-executor', features = ['defmt', 'nightly', 'arch-cortex-m', 'executor-thread', 'integrated-timers'] }
+
+defmt = '~0.3.8'
+defmt-rtt = '~0.4.1'
+
+cortex-m = { version = '~0.7.7', features = ['inline-asm', 'critical-section-single-core'] }
+cortex-m-rt = '~0.7.3'
+embedded-hal = '^1.0.0'
+
+panic-probe = { version = '~0.3.2', features = ['print-defmt'] }
