@@ -5,6 +5,7 @@ runner = 'probe-rs run --chip STM32G431CBUx'
 
 [build]
 target = 'thumbv7em-none-eabihf'
+target-dir = 'target'
 
 [env]
 DEFMT_LOG = 'trace'

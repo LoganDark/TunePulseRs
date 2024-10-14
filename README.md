@@ -51,3 +51,9 @@ Serial output will automatically be streamed to the terminal.
 **Make sure the code always contains an infinite loop somewhere, otherwise you will have to press the reset button on the board in order to flash it again.**
 
 You have to hold down reset until executing `cargo run`. If you try to hold reset during flashing, it won't work.
+
+### Debugging
+
+1. Solder the RST pin on the ST-Link board to the RST pin on the CLN17 board. This is the only pin that needs to be soldered, the rest go over USB
+2. Use the VSCode run configuration to flash and run the code
+3. The code won't start automatically, so make sure to unpause the debugger
