@@ -4,7 +4,7 @@ This is a Rust firmware for the Creapunk CLN17 v2.0 stepper motor driver.
 
 ## Features
 
-It prints hello world (for now)
+It prints hello world and flashes the RGB LED (for now)
 
 ## Development
 

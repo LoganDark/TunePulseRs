@@ -5,9 +5,9 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
+			"name": "Debug",
 			"type": "probe-rs-debug",
 			"request": "launch",
-			"name": "Debug",
 			"cwd": "${workspaceFolder}",
 			"connectUnderReset": true,
 			"chip": "STM32G431CBUx",
@@ -18,9 +18,11 @@
 			"coreConfigs": [
 				{
 					"coreIndex": 0,
-					"programBinary": "./target/thumbv7em-none-eabihf/debug/tunepulse"
+					"programBinary": "./target/thumbv7em-none-eabihf/debug/tunepulse",
+					"rttEnabled": true
 				}
-			]
+			],
+			"preLaunchTask": "rust: cargo build"
 		}
 	]
 }
